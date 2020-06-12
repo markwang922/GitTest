@@ -30,8 +30,10 @@ namespace GitTest
     {
         static void Main(string[] args)
         {
+            // create a instance of NullableTest class
             NullableTest naTest = new NullableTest();
 
+            // Show the numbers including nullable ones
             naTest.ShowNumber();
         }
     }
