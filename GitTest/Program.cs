@@ -49,6 +49,36 @@ namespace GitTest
         void DesignBasic()
         {
             Console.WriteLine("The basic design of a new furniture");
+            Console.ReadLine();
+        }
+    }
+
+    class ArrayBasic
+    {
+        // declare a new array name Degree
+        double[] Degree = new Double[5];
+
+        public void GetData()
+        {
+            Console.WriteLine("Please enter 5 double numbers:");
+            //Console.ReadLine();
+
+            for (int i = 0; i < 5; i++)
+            {
+                Degree[i] = Convert.ToDouble(Console.ReadLine());
+                // Console.WriteLine("Show the array of Degree[{0}] is {1}:", i, Degree[i]);
+            } 
+        }
+
+        public void ShowMe()
+        {
+            foreach (double d in Degree)
+            {
+                Console.WriteLine(d);
+            }
+
+            Console.WriteLine("Done...");
+            Console.ReadKey();
         }
     }
 
@@ -56,6 +86,7 @@ namespace GitTest
     {
         static void Main(string[] args)
         {
+            /*
             // create a instance of NullableTest class
             NullableTest naTest = new NullableTest();
 
@@ -65,6 +96,13 @@ namespace GitTest
             NullableAtShow newShow = new NullableAtShow();
 
             newShow.ShowMe();
+            */
+
+            // create a instace of array of Degree
+            ArrayBasic newBasic = new ArrayBasic();
+            newBasic.GetData();
+            newBasic.ShowMe();
+
         }
     }
 }
