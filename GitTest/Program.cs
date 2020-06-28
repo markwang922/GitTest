@@ -56,28 +56,48 @@ namespace GitTest
     class ArrayBasic
     {
         // declare a new array name Degree
-        double[] Degree = new Double[5];
+        int[] Degree = new int[5];
 
         public void GetData()
         {
-            Console.WriteLine("Please enter 5 double numbers:");
+            Console.WriteLine("Please enter 5 int numbers:");
             //Console.ReadLine();
 
             for (int i = 0; i < 5; i++)
             {
-                Degree[i] = Convert.ToDouble(Console.ReadLine());
+                Degree[i] = Convert.ToInt16(Console.ReadLine());
                 // Console.WriteLine("Show the array of Degree[{0}] is {1}:", i, Degree[i]);
-            } 
+            }
         }
 
         public void ShowMe()
         {
-            foreach (double d in Degree)
+            foreach (int d in Degree)
             {
                 Console.WriteLine(d);
             }
+        }
 
-            Console.WriteLine("Done...");
+        private double GetAverage(int[] arr, int n)
+        {
+            double ave;
+            int sum = 0;
+
+            foreach (int d in arr)
+            {
+                sum += d;
+            }
+
+            ave = (double)sum / n;
+            return ave;
+        }
+
+        public void ShowAverage()
+        {
+            double average;
+
+            average = GetAverage(Degree, 5);
+            Console.WriteLine("The average of this array is {0}", average);
             Console.ReadKey();
         }
     }
@@ -102,7 +122,7 @@ namespace GitTest
             ArrayBasic newBasic = new ArrayBasic();
             newBasic.GetData();
             newBasic.ShowMe();
-
+            newBasic.ShowAverage();
         }
     }
 }
