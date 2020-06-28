@@ -26,6 +26,32 @@ namespace GitTest
             Console.ReadLine();
         }
     }
+
+    class NullableAtShow
+    {
+        public void ShowMe()
+        {
+            double? num1 = null;
+            double? num2 = 3.14157;
+            double num3;
+
+            num3 = num1 ?? 5.34;
+            Console.WriteLine(" Value of num3: {0}", num3);
+
+            num3 = num2 ?? 5.34;
+            Console.WriteLine(" Value of num3: {0}", num3);
+            Console.ReadLine();
+        }
+    }
+
+    class FurnitureDesign
+    {
+        void DesignBasic()
+        {
+            Console.WriteLine("The basic design of a new furniture");
+        }
+    }
+
     class Program
     {
         static void Main(string[] args)
@@ -35,6 +61,10 @@ namespace GitTest
 
             // Show the numbers including nullable ones
             naTest.ShowNumber();
+
+            NullableAtShow newShow = new NullableAtShow();
+
+            newShow.ShowMe();
         }
     }
 }
