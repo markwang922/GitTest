@@ -102,6 +102,45 @@ namespace GitTest
         }
     }
 
+    class ArrayParams
+    {
+        // declare a new array name Degree
+        int[] Elements = new int[5];
+
+        public void GetData()
+        {
+            Console.WriteLine("Please enter 5 int numbers:");
+            //Console.ReadLine();
+
+            for (int i = 0; i < 5; i++)
+            {
+                Elements[i] = Convert.ToInt16(Console.ReadLine());
+                // Console.WriteLine("Show the array of Degree[{0}] is {1}:", i, Degree[i]);
+            }
+        }
+
+        private int GetSummary(params int[] arr)
+        {
+            int sum = 0;
+
+            foreach (int i in arr)
+            {
+                sum += i;
+            }
+
+            return sum;
+        }
+
+        public void ShowMe()
+        {
+            int summary;
+
+            summary = GetSummary(Elements);
+
+            Console.WriteLine("The summary is {0}", summary);
+        }
+    }
+
     class Program
     {
         static void Main(string[] args)
@@ -116,13 +155,20 @@ namespace GitTest
             NullableAtShow newShow = new NullableAtShow();
 
             newShow.ShowMe();
-            */
+            
 
             // create a instace of array of Degree
             ArrayBasic newBasic = new ArrayBasic();
             newBasic.GetData();
             newBasic.ShowMe();
             newBasic.ShowAverage();
+
+            */
+
+            ArrayParams aTest = new ArrayParams();
+            aTest.GetData();
+            aTest.ShowMe();
+            Console.ReadKey();
         }
     }
 }
