@@ -216,6 +216,28 @@ namespace GitTest
             string chat = String.Format("Message sent at {0:t} on {0:D}", waiting);
             Console.WriteLine("Message: {0}", chat);
         }
+
+        public string AcceptData()
+        {
+            string aMessage;
+
+            Console.WriteLine("Please enter the message:");
+            aMessage = Console.ReadLine();
+
+            return aMessage;
+        }
+
+        public void CompareMessage(string imessage, string jmessage)
+        {
+            if (String.Compare(imessage, jmessage) == 0)
+            {
+                Console.WriteLine(imessage + " and " + jmessage + " are equal.");
+            }
+            else
+            {
+                Console.WriteLine(imessage + " and " + jmessage + " are not equal.");
+            }
+        }
     }
     class Program
     {
@@ -255,8 +277,15 @@ namespace GitTest
 
             */
 
+            string aTest, bTest;
             MyString newString = new MyString();
-            newString.ShowString();
+            // newString.ShowString();
+
+            aTest = newString.AcceptData();
+            bTest = newString.AcceptData();
+
+            // compare these 2 messages and get the results
+            newString.CompareMessage(aTest, bTest);
 
             Console.ReadKey();
         }
