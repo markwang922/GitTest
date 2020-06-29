@@ -141,6 +141,53 @@ namespace GitTest
         }
     }
 
+    class MyArray
+    {
+        public int[] AcceptData()
+        {
+            int[] list = { 34, 72, 13, 44, 25, 30, 10 };
+            // int[] temp = list;
+            return list;
+        }
+
+        public void ShowOriginal(params int[] myList)
+        {
+            Console.Write("Original Array: ");
+
+            foreach (int i in myList)
+            {
+                Console.Write(i + " ");
+            }
+            Console.WriteLine();
+        }
+
+        public void ShowReverse(params int[] myTemp)
+        {
+            // reverse the array
+            Array.Reverse(myTemp);
+            Console.Write("Reversed Array: ");
+
+            foreach (int i in myTemp)
+            {
+                Console.Write(i + " ");
+            }
+            Console.WriteLine();
+        }
+
+        public void ShowSorted(params int[] mySort)
+        {
+            //sort the array
+            Array.Sort(mySort);
+            Console.Write("Sorted Array: ");
+
+            foreach (int i in mySort)
+            {
+                Console.Write(i + " ");
+            }
+            Console.WriteLine();
+        }
+    }
+
     class Program
     {
         static void Main(string[] args)
@@ -163,11 +210,22 @@ namespace GitTest
             newBasic.ShowMe();
             newBasic.ShowAverage();
 
-            */
 
             ArrayParams aTest = new ArrayParams();
             aTest.GetData();
             aTest.ShowMe();
+            Console.ReadKey();
+
+            int[] Test;
+
+            MyArray newMyArray = new MyArray();
+            Test = newMyArray.AcceptData();
+            newMyArray.ShowOriginal(Test);
+            newMyArray.ShowReverse(Test);
+            newMyArray.ShowSorted(Test);
+
+            */
+
             Console.ReadKey();
         }
     }
