@@ -314,6 +314,7 @@ namespace GitTest
 
             */
 
+            int n;
             string aTest, bTest;
             string testWord = "test";
 
@@ -329,6 +330,22 @@ namespace GitTest
             // check whether testwork existed in these 2 message
             newString.ContainWord(aTest, testWord);
             newString.ContainWord(bTest, testWord);
+
+            n = 15;
+
+            string subTest1, subTest2;
+
+            subTest1 = newString.GetSubMessage(aTest, n);
+            Console.WriteLine(subTest1);
+
+            subTest2 = newString.GetSubMessage(bTest, n);
+            Console.WriteLine(subTest2);
+
+            string joinTest;
+
+            joinTest = newString.JoinMessage();
+            Console.WriteLine(joinTest);
+
             Console.ReadKey();
         }
     }
