@@ -276,6 +276,7 @@ namespace GitTest
             return jMessage;
         }
     }
+
     class Program
     {
         static void Main(string[] args)
@@ -312,8 +313,6 @@ namespace GitTest
             newMyArray.ShowReverse(Test);
             newMyArray.ShowSorted(Test);
 
-            */
-
             int n;
             string aTest, bTest;
             string testWord = "test";
@@ -345,6 +344,8 @@ namespace GitTest
 
             joinTest = newString.JoinMessage();
             Console.WriteLine(joinTest);
+            
+            */
 
             Console.ReadKey();
         }
