@@ -238,6 +238,43 @@ namespace GitTest
                 Console.WriteLine(imessage + " and " + jmessage + " are not equal.");
             }
         }
+
+        // Check whether word existed in a message or not
+        public void ContainWord(string cMessage, string wMessage)
+        {
+            if (cMessage.Contains(wMessage))
+            {
+                Console.WriteLine("'{0}' exists in '{1}'.", wMessage, cMessage);
+            }
+            else
+            {
+                Console.WriteLine("'{0}' does not exist in '{1}'.", wMessage, cMessage);
+            }
+        }
+
+        // Get the substring from message
+        public string GetSubMessage(string sMessage, int n)
+        {
+            string subString;
+
+            subString = sMessage.Substring(n);
+
+            return subString;
+        }
+
+        // Join messages
+        public string JoinMessage()
+        {
+            string[] starray = new string[]{"Down the way nights are dark",
+            "And the sun shines daily on the mountain top",
+            "I took a trip on a sailing ship",
+            "And when I reached Jamaica",
+            "I made a stop"};
+
+            string jMessage = String.Join("\n", starray);
+
+            return jMessage;
+        }
     }
     class Program
     {
@@ -278,6 +315,8 @@ namespace GitTest
             */
 
             string aTest, bTest;
+            string testWord = "test";
+
             MyString newString = new MyString();
             // newString.ShowString();
 
@@ -287,6 +326,9 @@ namespace GitTest
             // compare these 2 messages and get the results
             newString.CompareMessage(aTest, bTest);
 
+            // check whether testwork existed in these 2 message
+            newString.ContainWord(aTest, testWord);
+            newString.ContainWord(bTest, testWord);
             Console.ReadKey();
         }
     }
